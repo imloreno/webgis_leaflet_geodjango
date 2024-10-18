@@ -18,10 +18,8 @@ class State(models.Model):
         return self.name
 
 class River(models.Model):
-    id = models.CharField(primary_key=True)  # 'full_id' from the properties
+    id = models.IntegerField(primary_key=True)  # 'full_id' from the properties
     name = models.CharField(max_length=100)    # 'name' from the properties
-    layer = models.CharField(max_length=255)   # 'layer' from the properties
-    path = models.CharField(max_length=500)    # 'path' from the properties
     geometry = models.MultiLineStringField(geography=True)  # 'geometry' as MultiLineString
 
     def __str__(self):
